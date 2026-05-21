@@ -213,19 +213,16 @@ public class controlCircleMK extends Application {
                 }
             }
         });
-
         apply.setOnAction(e -> {
             double baseSpeed = Double.parseDouble(txtConst.getText());
-            int index = 0;
 
             for (Trackable t : Trackable.observed) {
                 if (t instanceof Vehicle v) {
-                    double offset = (index % 5) * 0.3;
-                    v.setSpeed(baseSpeed + offset);
-                    index++;
+                    v.setSpeed(baseSpeed);
                 }
             }
         });
+        // ==========================================
 
         AnimationTimer timer = new AnimationTimer() {
             @Override
